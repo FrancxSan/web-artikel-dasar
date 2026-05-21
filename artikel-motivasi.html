@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Motivasi untuk Terus Belajar - Ruang Baca</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="logo">Ruang<span>Baca</span></div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#">Teknologi</a></li>
+            <li><a href="#">Gaya Hidup</a></li>
+        </ul>
+        <button id="theme-toggle" class="btn-toggle">🌙</button>
+    </nav>
+
+    <main class="container-single">
+        <a href="index.html" class="btn-back">&larr; Kembali ke Home</a>
+
+        <header class="post-header">
+            <span class="category-badge">Motivasi</span>
+            <h2>Motivasi untuk Terus Belajar</h2>
+            <p class="post-meta">Ditulis oleh: <strong>Admin</strong> | 20 Mei 2026</p>
+        </header>
+
+        <div class="post-img"
+            style="background-image: url('https://plus.unsplash.com/premium_photo-1723619021737-df1d775eccc8?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8bW90aXZhdGlvbmFsfGVufDB8fDB8fHww')">
+        </div>
+
+        <article class="post-content">
+            <p>Motivasi adalah kunci untuk tetap semangat dalam belajar, terutama ketika menghadapi tantangan atau
+                rintihan. Berikut beberapa tips untuk menjaga motivasi agar kamu terus belajar:</p>
+
+            <h3>1. Tetapkan Tujuan yang Jelas</h3>
+            <p>Menetapkan tujuan belajar yang spesifik dan realistis akan membantu kamu tetap fokus dan termotivasi.
+                Buatlah rencana jangka pendek dan panjang untuk mencapai tujuan tersebut.</p>
+
+            <h3>2. Buat Sistem Premi</h3>
+            <p>Memberikan hadiah kecil kepada diri sendiri setelah menyelesaikan tugas atau mencapai tujuan belajar
+                dapat meningkatkan motivasi. Ini bisa berupa waktu luang, makanan favorit, atau aktivitas yang kamu
+                nikmati.</p>
+
+            <h3>3. Cari Inspirasi</h3>
+            <p>Menyusun jadwal belajar yang menarik dan mencari inspirasi dari orang-orang yang sukses dalam bidang yang
+                kamu minati dapat membantu kamu tetap termotivasi.</p>
+
+            <h3>4. Bangun Kebiasaan</h3>
+            <p>Menjadikan belajar sebagai kebiasaan sehari-hari akan membuatnya lebih mudah dan menyenangkan. Mulailah
+                dengan jadwal yang realistis dan konsisten.</p>
+
+            <blockquote>" Motivasi adalah kunci untuk tetap semangat dalam belajar."</blockquote>
+
+            <p>Dengan menerapkan tips-tips ini, kamu dapat menjaga motivasi untuk terus belajar dan mencapai tujuan
+                akademikmu dengan lebih mudah.</p>
+        </article>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Ruang Baca. Dibuat dengan ☕ untuk Tugas Web Dasar.</p>
+    </footer>
+    <script>
+        const themeToggle = document.getElementById('theme-toggle');
+
+        // 1. Cek memori browser saat halaman dimuat
+        const currentTheme = localStorage.getItem('theme');
+        if (currentTheme === 'dark') {
+            document.body.classList.add('dark-mode');
+            themeToggle.innerText = '☀️';
+        } else {
+            themeToggle.innerText = '🌙';
+        }
+
+        // 2. Logika pas tombol diklik
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+
+            let theme = 'light';
+            if (document.body.classList.contains('dark-mode')) {
+                theme = 'dark';
+                themeToggle.innerText = '☀️';
+            } else {
+                themeToggle.innerText = '🌙';
+            }
+
+            // 3. Simpan status ke memori browser
+            localStorage.setItem('theme', theme);
+        });
+    </script>
+</body>
+
+</html>

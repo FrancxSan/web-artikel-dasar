@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tips Belajar Web Dasar Tanpa Pusing - Ruang Baca</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="logo">Ruang<span>Baca</span></div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#">Teknologi</a></li>
+            <li><a href="#">Gaya Hidup</a></li>
+        </ul>
+        <button id="theme-toggle" class="btn-toggle">🌙</button>
+    </nav>
+
+    <main class="container-single">
+        <a href="index.html" class="btn-back">&larr; Kembali ke Home</a>
+
+        <header class="post-header">
+            <span class="category-badge">Coding</span>
+            <h2>Tips Belajar Web Dasar Tanpa Pusing</h2>
+            <p class="post-meta">Ditulis oleh: <strong>Admin</strong> | 20 Mei 2026</p>
+        </header>
+
+        <div class="post-img"
+            style="background-image: url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800')"></div>
+
+        <article class="post-content">
+            <p>Belajar HTML dan CSS seringkali terasa menakutkan bagi pemula di dunia pemrograman web dasar. Banyaknya
+                tag dan properti desain yang harus dihafalkan terkadang membuat kita pusing duluan sebelum mulai
+                mempraktikkannya.</p>
+
+            <h3>1. Jangan Dihafal, Tapi Dipahami</h3>
+            <p>Kunci utama menguasai HTML dan CSS bukanlah menghafal ratusan kode. Manfaatkan dokumentasi seperti MDN
+                Web Docs atau W3Schools. Yang terpenting adalah kamu tahu logika strukturnya.</p>
+
+            <h3>2. Praktik Langsung (Learn by Doing)</h3>
+            <p>Metode terbaik belajar ngoding adalah dengan langsung membuat sesuatu. Seperti membuat blog sederhana
+                ini, kamu akan langsung paham bagaimana mengatur jarak, mengganti warna, dan membuat tampilan yang rapi
+                di HP.</p>
+
+            <blockquote>"Kodingan terbaik lahir dari banyaknya error yang berhasil kamu selesaikan."</blockquote>
+
+            <p>Jadi, jangan takut codinganmu error ya! Tetap semangat belajar pemrograman web-nya.</p>
+        </article>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Ruang Baca. Dibuat dengan ☕ untuk Tugas Web Dasar.</p>
+    </footer>
+    <script>
+        const themeToggle = document.getElementById('theme-toggle');
+
+        // 1. Cek memori browser saat halaman dimuat
+        const currentTheme = localStorage.getItem('theme');
+        if (currentTheme === 'dark') {
+            document.body.classList.add('dark-mode');
+            themeToggle.innerText = '☀️';
+        } else {
+            themeToggle.innerText = '🌙';
+        }
+
+        // 2. Logika pas tombol diklik
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+
+            let theme = 'light';
+            if (document.body.classList.contains('dark-mode')) {
+                theme = 'dark';
+                themeToggle.innerText = '☀️';
+            } else {
+                themeToggle.innerText = '🌙';
+            }
+
+            // 3. Simpan status ke memori browser
+            localStorage.setItem('theme', theme);
+        });
+    </script>
+</body>
+
+</html>
